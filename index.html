@@ -370,12 +370,12 @@
 
     <div class="callout amber">
       <div class="callout-label">New Team Structure</div>
-      <div class="callout-body"><strong>Whitney Perez shifted the PM structure from initiative-based to outcome-based ownership.</strong> The three frames are now <strong>Activate</strong> (Sean Rowland, PM), <strong>Engage</strong> (Erin Bentel, PM), and <strong>Grow</strong> (James McDade, PM). This is newer and still being calibrated, Designer scope assignments are still being finalized against this model, which is something I am actively working through with Ava. Your scope sits within Activate and we will walk through what that means specifically in our first 1:1.</div>
+      <div class="callout-body"><strong>Whitney Perez shifted the PM structure from initiative-based to outcome-based ownership.</strong> The three frames are now <strong>Activate</strong> (Sean Rowland, PM), <strong>Engage</strong> (Erin Bentel, PM), and <strong>Grow</strong> (James McDade, PM). This is still being actively worked through, and designer and PM assignments are not yet fully finalized. Some of what is in the Portfolio Dashboard may still shift as the product org structure is confirmed. Your scope sits within the MVIP/RCC migration work you know well, and we will walk through exactly what that means in our first 1:1.</div>
     </div>
 
     <div class="callout amber">
       <div class="callout-label">Work That Has Continued</div>
-      <div class="callout-body">The MVIP/RCC migration has continued. Most of the in-flight features you knew are in development or recently shipped. Julie covered your work through the transition, and the handoff documentation is clean. I will walk you through exactly what is yours to pick up, nothing should feel like you are walking into a mystery.</div>
+      <div class="callout-body">The MVIP/RCC migration has continued. Most of the in-flight features you knew are in development or recently shipped. Julie documented the handoff thoroughly before her departure and the context is preserved. I will walk you through exactly what is yours to pick up, nothing should feel like you are walking into a mystery.</div>
     </div>
   </div>
 
@@ -385,34 +385,167 @@
   <div class="section">
     <div class="section-label">Your Scope</div>
     <div class="section-title">What is yours when you return</div>
-    <div class="section-body">Your work sits across two areas. Here is an honest snapshot of each.</div>
+    <div class="section-body">You are returning to the work you know well: MVIP/RCC migration in RealPro Dashboard. This is familiar territory and the handoff from Julie is documented and clean. Here is the full picture of what is in flight and what is transferring to you.</div>
 
-    <div class="cards-2" style="margin-top:16px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;margin-top:24px">MVIP/RCC Migration</div>
+
+    <div class="cards-2" style="margin-top:0">
       <div class="card accent-purple">
-        <div class="card-eyebrow">MVIP Migration, Handoff from Julie</div>
-        <div class="card-title">In-flight features transferring to you</div>
+        <div class="card-eyebrow">Where the migration stands</div>
+        <div class="card-title">Almost all migrated features now in flight</div>
         <ul class="bullets">
-          <li><strong>ISA role</strong>, in development, transferring from Julie</li>
-          <li><strong>Agent removal</strong>, in development, transferring from Julie</li>
-          <li><strong>Legacy portal deprecation comms</strong>, no design plan exists yet for communicating the Opcity Broker Portal and MVIP Portal sunset to clients; this needs an owner and a timeline before Q3</li>
+          <li>Core design work is largely complete</li>
+          <li>Feedback loop in progress with Beta clients, led by Research: Tim Ballew</li>
+          <li>Target: MVIP client migration complete end of Q3 FY27</li>
+          <li>PM: Charlie Lehman · Eng leads: James Monsebroten, Ryan Saathoff · TPM: Dee (Diana) Pena</li>
         </ul>
-        <div style="margin-top:10px;font-size:12px;color:var(--mid)">Julie has a return check-in scheduled before July 1, I will make sure I am in that meeting with you.</div>
       </div>
-      <div class="card accent-purple">
-        <div class="card-eyebrow">Live Transfer Agent Assignment, New Brief</div>
-        <div class="card-title">PM: Charlie Lehman · Q1 discovery complete</div>
+      <div class="card accent-red">
+        <div class="card-eyebrow">Key Risk</div>
+        <div class="card-title">The data, not the design</div>
         <ul class="bullets">
-          <li>Addresses growing problem: clients have limited control over which agent receives a live transfer lead</li>
-          <li>Scope: discovery across ~600 MVIP clients; H2 build conditional on Q2 test results</li>
-          <li><strong>Key constraint:</strong> agent assignment logic currently lives in FocusFire, which is on the deprecation path. Eng needs to confirm which system to build in before H2</li>
-          <li>This was held by Julie. Full brief and context ready to hand over</li>
+          <li>Biggest remaining risk is client data, not feature design</li>
+          <li>Clients have duplicate accounts, missing Party IDs and Broker Op IDs, and outdated contact data</li>
+          <li>This makes linking FocusFire and Salesforce accounts technically risky</li>
+          <li>No design plan yet for communicating legacy portal deprecation to clients. Likely yours to own on return</li>
         </ul>
       </div>
     </div>
 
+    <div style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;margin-top:28px">Features Transferring to You</div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:16px">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--dark)">
+            <th style="padding:10px 14px;text-align:left;color:var(--white);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">Feature</th>
+            <th style="padding:10px 14px;text-align:left;color:var(--white);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">Target</th>
+            <th style="padding:10px 14px;text-align:left;color:var(--white);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">Status</th>
+            <th style="padding:10px 14px;text-align:left;color:var(--white);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">ISA role</td>
+            <td style="padding:10px 14px;color:var(--mid)">FY27 Q1</td>
+            <td style="padding:10px 14px"><span style="background:var(--amber-bg);color:var(--amber);font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px">In development</span></td>
+            <td style="padding:10px 14px;color:var(--mid)">Transferring from Julie</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">Agent removal</td>
+            <td style="padding:10px 14px;color:var(--mid)">FY27 Q1</td>
+            <td style="padding:10px 14px"><span style="background:var(--amber-bg);color:var(--amber);font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px">In development</span></td>
+            <td style="padding:10px 14px;color:var(--mid)">Transferring from Julie</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">Prospect and PCL assignment / status updates</td>
+            <td style="padding:10px 14px;color:var(--mid)">FY27 Q1</td>
+            <td style="padding:10px 14px"><span style="background:var(--amber-bg);color:var(--amber);font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px">In development</span></td>
+            <td style="padding:10px 14px;color:var(--mid)">Transferring from Julie to Jon</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">Legacy portal deprecation comms</td>
+            <td style="padding:10px 14px;color:var(--mid)">Before Q3</td>
+            <td style="padding:10px 14px"><span style="background:var(--red-light);color:var(--red);font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px">No owner yet</span></td>
+            <td style="padding:10px 14px;color:var(--mid)">Opcity Broker Portal + MVIP Portal sunset. Likely yours to own</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;margin-top:28px">Live Transfer Agent Assignment</div>
+
+    <div class="card accent-purple" style="margin-bottom:16px">
+      <div class="card-eyebrow">PM: Charlie Lehman · Q1 discovery complete · Q2 hypothesis testing</div>
+      <div class="card-title">Picking up where Julie left off</div>
+      <ul class="bullets">
+        <li>Addresses a growing problem: as live transfer volume increases, clients have limited control over which agent receives a live transfer lead</li>
+        <li>Discovery scoped across the full ~600 MVIP client base before any build commitment</li>
+        <li>H2 build is conditional on Q2 test results</li>
+        <li><strong>Key constraint:</strong> agent assignment logic lives in FocusFire, which is on the deprecation path. Eng coordination with Daniel and eng LT needed to confirm which system to build in for test and scale</li>
+        <li>Full brief and all context ready to hand over. Jon Grimes is also on this brief alongside you</li>
+      </ul>
+    </div>
+
+    <div style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;margin-top:28px">Key Meetings</div>
+
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:16px">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--bg)">
+            <th style="padding:10px 14px;text-align:left;color:var(--dark);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border)">Meeting</th>
+            <th style="padding:10px 14px;text-align:left;color:var(--dark);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border)">When</th>
+            <th style="padding:10px 14px;text-align:left;color:var(--dark);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border)">Audience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">Front-end eng standup (Tech Mod)</td>
+            <td style="padding:10px 14px;color:var(--mid)">Mon-Thu, 10am CT</td>
+            <td style="padding:10px 14px;color:var(--mid)">Front-end engineering</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">Buyer Client Partner Design Sync</td>
+            <td style="padding:10px 14px;color:var(--mid)">Bi-weekly Tuesdays, 1pm CT</td>
+            <td style="padding:10px 14px;color:var(--mid)">Frontline / GTM</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">UWP Requirements Review</td>
+            <td style="padding:10px 14px;color:var(--mid)">Weekly Tuesdays, 2pm CT</td>
+            <td style="padding:10px 14px;color:var(--mid)">Engineering</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">RPD Weekly Design Sync</td>
+            <td style="padding:10px 14px;color:var(--mid)">Weekly Fridays, 1:30pm CT</td>
+            <td style="padding:10px 14px;color:var(--mid)">Design</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 14px;color:var(--dark);font-weight:500">Client x Design Systems</td>
+            <td style="padding:10px 14px;color:var(--mid)">Weekly Fridays, 1pm CT</td>
+            <td style="padding:10px 14px;color:var(--mid)">Design Systems</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;margin-top:28px">Key Cross-Functional Partners</div>
+
+    <div class="person-grid" style="margin-top:0;margin-bottom:16px">
+      <div class="person-card">
+        <div class="person-name">Charlie Lehman</div>
+        <div class="person-role">PM · MVIP/RCC Migration + Live Transfer Agent Assignment</div>
+        <div class="person-note">Your primary PM for the work you are picking up. Q1 discovery is complete; connect with him early to get context on where Q2 hypothesis testing stands.</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Erin Bentel</div>
+        <div class="person-role">Sr. PM · Engage capability (was RPD in FY26)</div>
+        <div class="person-note">Grounds work in clear outcomes and user-problem definition. Strong design partnership instincts. You will likely interact with her as the org structure settles.</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">James Monsebroten</div>
+        <div class="person-role">Engineering Manager · 25 years at RDC</div>
+        <div class="person-note">Carries the institutional knowledge of the whole platform. Make sure he is in the room for anything high-stakes. When he is not available, flag it rather than working around it.</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Dee (Diana) Pena</div>
+        <div class="person-role">Technical Program Manager</div>
+        <div class="person-note">Keeps the RPD train on the tracks. First person to loop in when you need to schedule a cross-functional review or get the right engineering stakeholders in the room.</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Tim Ballew</div>
+        <div class="person-role">Research Lead · MVIP/RCC</div>
+        <div class="person-note">Leading the Beta client feedback loop. Good to connect with early to understand what signals are coming in from research and what design questions are still open.</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Whitney Perez</div>
+        <div class="person-role">Director, Product</div>
+        <div class="person-note">New and actively building her strategic vision. Thinks big with strong philosophical direction. Pooja and Will are good partners in bringing structure and clarity here.</div>
+      </div>
+    </div>
+
     <div class="callout green" style="margin-top:16px">
-      <div class="callout-label">The Bigger Picture, Activate Capability</div>
-      <div class="callout-body">Your work feeds into the <strong>Activate</strong> capability, first client value and frictionless early success. The metrics you are contributing to are client adoption rate, % onboarded under 14 days, and time to first value. This is the context that connects your individual features to the FY27 strategy. We will spend time in our early 1:1s making sure that framing is clear and useful for how you approach the work.</div>
+      <div class="callout-label">The Bigger Picture</div>
+      <div class="callout-body">Your work feeds into the platform's Activate capability: first client value and frictionless early success. The MVIP migration is the largest client re-onboarding the platform has had, and the design work you are picking up sits at the center of it. We will connect the individual features to that broader frame in our early 1:1s so the context is useful, not just a label on top of the work.</div>
     </div>
   </div>
 
@@ -489,7 +622,7 @@
           <div class="tool-name">Design Career Growth Tracker</div>
           <div style="margin-top:4px"><span class="check-tag tag-purple">Private · Password protected</span></div>
         </div>
-        <div class="tool-desc">A tool I built to manage career development across the team. Includes your career path visualization (current level vs. next level expectations from the RDC career ladder), skill ratings, a roadmap view of your work across quarters, review cycle stage tracking, and a space for 1:1 notes. Your password is <strong>christina_grow</strong>. We will look at it together in an early 1:1. It is a starting point for conversation, not a performance evaluation.<br><br>One small ask: I like to celebrate the team on birthdays and other occasions, so if you are comfortable sharing your birthday, address, phone number, and a personal email, there is a place to add those in the tracker. Completely optional.</div>
+        <div class="tool-desc">A tool I built to manage career development across the team. Includes your career path visualization (current level vs. next level expectations from the RDC career ladder), skill ratings, a roadmap view of your work across quarters, review cycle stage tracking, and a space for 1:1 notes. Your password is <strong>christina_grow</strong>. We will look at it together in an early 1:1. It is a starting point for conversation, not a performance evaluation.<br><br>One small ask: I like to celebrate the team on birthdays and other occasions, so if you are comfortable sharing your birthday, address, phone number, and a personal email, there is a place to add those in the tracker. Completely optional.<br><br><a href="https://mirellasmartt-netizen.github.io/Design-Career-Growth-Tracker/" target="_blank" style="color:var(--red);font-weight:500;text-decoration:none;">Open Career Growth Tracker &rarr;</a></div>
       </div>
       <div class="tool-item">
         <div>
@@ -503,7 +636,7 @@
           <div class="tool-name">Portfolio Dashboard</div>
           <div style="margin-top:4px"><span class="check-tag tag-blue">Reference</span></div>
         </div>
-        <div class="tool-desc">A comprehensive reference document covering the FY27 product strategy, surface roadmaps for RPD, RPA, and the Online Store, team structure, key decisions from the FY27 roadmap workshop, and a design strategy section specific to BACXD. Useful for getting up to speed on context quickly. I will share the link directly.</div>
+        <div class="tool-desc">A comprehensive reference document covering the FY27 product strategy, surface roadmaps for RPD, RPA, and the Online Store, team structure, key decisions from the FY27 roadmap workshop, and a design strategy section specific to BACXD. Useful for getting up to speed on context quickly.<br><br>Note: designer and PM assignments reflected in the dashboard are still being finalized as the overall product org structure is confirmed. Some details may shift, and I will keep it updated as things are locked in.<br><br><a href="https://mirellasmartt-netizen.github.io/Dashboards/" target="_blank" style="color:var(--red);font-weight:500;text-decoration:none;">Open Portfolio Dashboard &rarr;</a></div>
       </div>
     </div>
   </div>
@@ -597,7 +730,7 @@
         <div class="check-num">Wk 1</div>
         <div class="check-content">
           <div class="check-title">Reorient, no deliverables expected</div>
-          <div class="check-body">Return check-in with Julie (I will be there). Read through this brief at your own pace. Join the BACXD team meeting on Tuesday. Look through the Career Growth Tracker. Ask whatever questions come up, nothing is a dumb question here.</div>
+          <div class="check-body">Read through this brief at your own pace. Join the BACXD team meeting on Tuesday. Look through the Career Growth Tracker. Reach out to Jon to start getting back up to speed on the in-flight MVIP work. Ask whatever questions come up, nothing is a dumb question here.</div>
           <span class="check-tag tag-green">Low pressure</span>
         </div>
       </div>
