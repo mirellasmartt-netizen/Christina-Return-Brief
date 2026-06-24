@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Back, Christina</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #CC0000;
+    --red-light: #FCE8E8;
+    --dark: #1A1A1A;
+    --mid: #555;
+    --muted: #888;
+    --border: #E5E5E5;
+    --bg: #F7F7F5;
+    --white: #FFFFFF;
+    --purple: #534AB7;
+    --purple-bg: #EEEDFE;
+    --green: #3B6D11;
+    --green-bg: #EAF3DE;
+    --amber: #854F0B;
+    --amber-bg: #FAEEDA;
+    --teal: #0F6E56;
+    --teal-bg: #E1F5EE;
+    --blue: #185FA5;
+    --blue-bg: #E6F1FB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--dark);
+    padding: 56px 64px 48px;
+    border-bottom: 3px solid var(--red);
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero h1 strong { font-weight: 600; color: var(--red); }
+  .hero-sub {
+    font-size: 15px;
+    color: #aaa;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+  }
+  .hero-meta-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #666;
+  }
+  .hero-meta-item span { color: #999; }
+
+  /* LAYOUT */
+  .page { max-width: 820px; margin: 0 auto; padding: 48px 48px 80px; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 52px; }
+  .section-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .section-body {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.8;
+    max-width: 720px;
+  }
+  .section-body + .section-body { margin-top: 10px; }
+  .divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--red);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .callout-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .callout-body {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+  .callout-body strong { color: var(--dark); }
+  .callout.green { border-left-color: var(--green); }
+  .callout.green .callout-label { color: var(--green); }
+  .callout.amber { border-left-color: var(--amber); }
+  .callout.amber .callout-label { color: var(--amber); }
+  .callout.purple { border-left-color: var(--purple); }
+  .callout.purple .callout-label { color: var(--purple); }
+  .callout.teal { border-left-color: var(--teal); }
+  .callout.teal .callout-label { color: var(--teal); }
+
+  /* CARDS */
+  .cards-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  .cards-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 16px; }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+  }
+  .card-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .card.accent-purple { border-left: 3px solid var(--purple); }
+  .card.accent-green { border-left: 3px solid var(--green); }
+  .card.accent-amber { border-left: 3px solid var(--amber); }
+  .card.accent-red { border-left: 3px solid var(--red); }
+  .card.accent-teal { border-left: 3px solid var(--teal); }
+  .card.accent-blue { border-left: 3px solid var(--blue); }
+
+  /* BULLETS */
+  ul.bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+  ul.bullets li {
+    font-size: 12px; color: var(--mid); line-height: 1.5;
+    padding-left: 14px; position: relative;
+  }
+  ul.bullets li::before { content: "•"; position: absolute; left: 0; color: var(--border); font-size: 14px; top: -1px; }
+  ul.bullets li strong { color: var(--dark); }
+
+  /* TIMELINE / CHECKLIST */
+  .checklist { display: flex; flex-direction: column; gap: 0; margin-top: 16px; }
+  .check-item {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    padding-top: 2px;
+  }
+  .check-content {}
+  .check-title { font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
+  .check-body { font-size: 12px; color: var(--mid); line-height: 1.6; }
+  .check-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 5px;
+  }
+  .tag-red { background: var(--red-light); color: var(--red); }
+  .tag-amber { background: var(--amber-bg); color: var(--amber); }
+  .tag-green { background: var(--green-bg); color: var(--green); }
+  .tag-purple { background: var(--purple-bg); color: var(--purple); }
+  .tag-teal { background: var(--teal-bg); color: var(--teal); }
+  .tag-blue { background: var(--blue-bg); color: var(--blue); }
+
+  /* MEETING CADENCE */
+  .cadence-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 16px;
+    background: var(--white);
+  }
+  .cadence-cell {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .cadence-cell:nth-child(odd) {
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--bg);
+    font-size: 11px;
+    border-right: 1px solid var(--border);
+  }
+  .cadence-cell:last-child,
+  .cadence-cell:nth-last-child(2) { border-bottom: none; }
+
+  /* PEOPLE */
+  .person-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .person-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .person-name { font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+  .person-role { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .person-note { font-size: 12px; color: var(--mid); line-height: 1.5; }
+
+  /* GOALS TIMELINE */
+  .goals-timeline {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 16px;
+  }
+  .goals-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .goals-row:last-child { border-bottom: none; }
+  .goals-when {
+    padding: 14px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg);
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+  }
+  .goals-what {
+    padding: 14px 16px;
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .goals-what strong { color: var(--dark); display: block; margin-bottom: 2px; }
+
+  /* TOOLS ROW */
+  .tools-row { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+  .tool-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .tool-name { font-size: 12px; font-weight: 600; color: var(--dark); }
+  .tool-desc { font-size: 12px; color: var(--mid); line-height: 1.5; }
+
+  /* CLOSING */
+  .closing {
+    background: var(--dark);
+    border-radius: 10px;
+    padding: 32px 36px;
+    margin-top: 40px;
+  }
+  .closing-body {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.8;
+    max-width: 680px;
+  }
+  .closing-body strong { color: var(--white); }
+  .closing-sig {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">BACXD · Client Design · Return Brief</div>
+  <h1>Welcome back, <strong>Christina.</strong></h1>
+  <div class="hero-sub">This document is meant to orient you, not overwhelm you. Read it at whatever pace feels right, and everything in it is something we can talk through together.</div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span>Prepared by</span> Mirella G. Smartt</div>
+    <div class="hero-meta-item"><span>Return date</span> ~July 1, 2026</div>
+    <div class="hero-meta-item"><span>Your role</span> Lead Product Designer · T5</div>
+    <div class="hero-meta-item"><span>Team</span> BACXD · Client Design</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ── FIRST, THE PERSONAL PART ── -->
+  <div class="section">
+    <div class="section-label">A note from Mirella</div>
+    <div class="section-title">Before anything else</div>
+    <div class="section-body">
+      Coming back from parental leave is its own kind of transition, separate from anything work-related. I want you to know that I am not expecting you to hit the ground running on day one. The work will be here. What matters more to me in the first couple of weeks is that you feel oriented, supported, and clear on what is yours to own, so you can ease back in on your own terms.
+    </div>
+    <div class="section-body">
+      You are also returning to a changed team. Julie has moved on and I am your new manager. I want to be honest about that rather than gloss over it. I have a lot of context on the work, I have been building it since joining in June, and I genuinely want to earn your trust over time, not assume it. This document is one small step in that direction: giving you the full picture so you are not piecing it together from Slack and calendar invites.
+    </div>
+    <div class="section-body">
+      My door, or Slack message, or Monday 1:1, is always open. There are no wrong questions here.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── WHAT HAS CHANGED ── -->
+  <div class="section">
+    <div class="section-label">Org Context</div>
+    <div class="section-title">What has changed since you left</div>
+    <div class="section-body">A few things are meaningfully different from when you went on leave. Here is the honest summary.</div>
+
+    <div class="callout amber">
+      <div class="callout-label">New Leadership</div>
+      <div class="callout-body"><strong>Gray Knowlton joined as SVP Products (GM)</strong>, he is Ava's boss and brings a strong, clear point of view on how the team operates. His framing is that we are building a system for coordinated action, hitting goals, and making products people actually want to use. He is direct about what he observed when joining (siloed progress, internal friction, legacy complexity) and equally direct about the opportunity. He is invested in leadership development and team culture as intentional priorities, not just outcomes. His All Hands deck is worth reading when you have 15 minutes.</div>
+    </div>
+
+    <div class="callout amber">
+      <div class="callout-label">New Team Structure</div>
+      <div class="callout-body"><strong>Whitney Perez shifted the PM structure from initiative-based to outcome-based ownership.</strong> The three frames are now <strong>Activate</strong> (Sean Rowland, PM), <strong>Engage</strong> (Erin Bentel, PM), and <strong>Grow</strong> (James McDade, PM). This is newer and still being calibrated, Designer scope assignments are still being finalized against this model, which is something I am actively working through with Ava. Your scope sits within Activate and we will walk through what that means specifically in our first 1:1.</div>
+    </div>
+
+    <div class="callout amber">
+      <div class="callout-label">Work That Has Continued</div>
+      <div class="callout-body">The MVIP/RCC migration has continued. Most of the in-flight features you knew are in development or recently shipped. Julie covered your work through the transition, and the handoff documentation is clean. I will walk you through exactly what is yours to pick up, nothing should feel like you are walking into a mystery.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── YOUR WORK ── -->
+  <div class="section">
+    <div class="section-label">Your Scope</div>
+    <div class="section-title">What is yours when you return</div>
+    <div class="section-body">Your work sits across two areas. Here is an honest snapshot of each.</div>
+
+    <div class="cards-2" style="margin-top:16px">
+      <div class="card accent-purple">
+        <div class="card-eyebrow">MVIP Migration, Handoff from Julie</div>
+        <div class="card-title">In-flight features transferring to you</div>
+        <ul class="bullets">
+          <li><strong>ISA role</strong>, in development, transferring from Julie</li>
+          <li><strong>Agent removal</strong>, in development, transferring from Julie</li>
+          <li><strong>Legacy portal deprecation comms</strong>, no design plan exists yet for communicating the Opcity Broker Portal and MVIP Portal sunset to clients; this needs an owner and a timeline before Q3</li>
+        </ul>
+        <div style="margin-top:10px;font-size:12px;color:var(--mid)">Julie has a return check-in scheduled before July 1, I will make sure I am in that meeting with you.</div>
+      </div>
+      <div class="card accent-purple">
+        <div class="card-eyebrow">Live Transfer Agent Assignment, New Brief</div>
+        <div class="card-title">PM: Charlie Lehman · Q1 discovery complete</div>
+        <ul class="bullets">
+          <li>Addresses growing problem: clients have limited control over which agent receives a live transfer lead</li>
+          <li>Scope: discovery across ~600 MVIP clients; H2 build conditional on Q2 test results</li>
+          <li><strong>Key constraint:</strong> agent assignment logic currently lives in FocusFire, which is on the deprecation path. Eng needs to confirm which system to build in before H2</li>
+          <li>This was held by Julie. Full brief and context ready to hand over</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout green" style="margin-top:16px">
+      <div class="callout-label">The Bigger Picture, Activate Capability</div>
+      <div class="callout-body">Your work feeds into the <strong>Activate</strong> capability, first client value and frictionless early success. The metrics you are contributing to are client adoption rate, % onboarded under 14 days, and time to first value. This is the context that connects your individual features to the FY27 strategy. We will spend time in our early 1:1s making sure that framing is clear and useful for how you approach the work.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── FY27 GOALS ── -->
+  <div class="section">
+    <div class="section-label">FY27 Goals</div>
+    <div class="section-title">Your goals, and the timeline to set them</div>
+    <div class="section-body">Per HR, you have 45 days from your return date to finalize FY27 goals, 30 days to draft and work on them, and a 15-day window for leadership review before they need to be entered in the system. That gives us time to do this thoughtfully.</div>
+
+    <div class="goals-timeline">
+      <div class="goals-row">
+        <div class="goals-when">Week 1–2</div>
+        <div class="goals-what"><strong>Get oriented, no goals pressure</strong>First two weeks are for re-familiarizing with the work, team, and tools. Goals conversation starts after you feel grounded.</div>
+      </div>
+      <div class="goals-row">
+        <div class="goals-when">Week 3–4</div>
+        <div class="goals-what"><strong>Draft together in our 1:1s</strong>We will work through your goals as a conversation, what you want to grow in, what the team needs from you at Lead level, and how those two things connect. I will share a framework to make that conversation easier.</div>
+      </div>
+      <div class="goals-row">
+        <div class="goals-when">~Day 30</div>
+        <div class="goals-what"><strong>Goals drafted and reviewed with me</strong>Goals finalized between us before going to Ava for the 15-day leadership review window.</div>
+      </div>
+      <div class="goals-row">
+        <div class="goals-when">~Day 45</div>
+        <div class="goals-what"><strong>Goals entered in the system</strong>HR deadline. We will have plenty of runway before this.</div>
+      </div>
+    </div>
+
+    <div class="callout teal" style="margin-top:16px">
+      <div class="callout-label">What Goals at Lead Level Look Like</div>
+      <div class="callout-body">At T5, goals tend to span three areas: <strong>craft</strong> (the quality and depth of your design work), <strong>influence</strong> (how you shape the work of others, including juniors and cross-functional partners), and <strong>growth</strong> (what you are building toward). I have a Career Growth Tracker set up for the whole team that maps this out, we will look at it together in one of our early 1:1s.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── CADENCE ── -->
+  <div class="section">
+    <div class="section-label">How We Work Together</div>
+    <div class="section-title">Meeting cadence and how to reach me</div>
+    <div class="section-body">Here is what our regular rhythm looks like. Everything is new, I have not had the chance to set up all of these with you yet, so consider this a preview of what we will confirm together.</div>
+
+    <div class="cadence-row">
+      <div class="cadence-cell">1:1 with Mirella</div>
+      <div class="cadence-cell">Mondays, frequency and length TBD together. This is your time and I follow your agenda. Bring whatever is on your mind: work, growth, concerns, questions. I will use it for feedback and context-sharing too, but you set the direction.</div>
+      <div class="cadence-cell">BACXD Team Meeting</div>
+      <div class="cadence-cell">Tuesdays, weekly with your direct team (Client Design). Mix of updates, design crits, and team discussions. You will be a senior voice in the room and I value your perspective on cross-team topics, not just your own work.</div>
+      <div class="cadence-cell">Full BACXD Sync</div>
+      <div class="cadence-cell">Tuesdays, bi-weekly with Ava's full BACXD team across all design disciplines. Broader org visibility, cross-team updates, and alignment across the wider design organization.</div>
+      <div class="cadence-cell">RPD Design Sync</div>
+      <div class="cadence-cell">Fridays 1:30pm CT, weekly design sync for the RPD team. This is where in-progress work gets shared and reviewed.</div>
+      <div class="cadence-cell">UWP Requirements Review</div>
+      <div class="cadence-cell">Tuesdays 2pm CT, weekly with Engineering. This is the primary sync for aligning design decisions with eng constraints.</div>
+      <div class="cadence-cell">Slack</div>
+      <div class="cadence-cell">Best way to reach me for quick questions or quick context. I am responsive and try to be clear about when something needs a longer conversation vs. a fast answer. I will add you to the relevant team Slack channels in your first week.</div>
+      <div class="cadence-cell">Office Hours</div>
+      <div class="cadence-cell">Tuesday through Friday at 12:20pm, optional drop-in time with a sign-up sheet. No agenda needed. Good for quick questions, a second opinion on work, or just getting some face time. I will share the sign-up link when you are back.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── TOOLS ── -->
+  <div class="section">
+    <div class="section-label">Team Infrastructure</div>
+    <div class="section-title">Tools and resources I have set up</div>
+    <div class="section-body">I have built a few things for the team since joining. Here is what exists and how it is relevant to you.</div>
+
+    <div class="tools-row">
+      <div class="tool-item">
+        <div>
+          <div class="tool-name">Design Career Growth Tracker</div>
+          <div style="margin-top:4px"><span class="check-tag tag-purple">Private · Password protected</span></div>
+        </div>
+        <div class="tool-desc">A tool I built to manage career development across the team. Includes your career path visualization (current level vs. next level expectations from the RDC career ladder), skill ratings, a roadmap view of your work across quarters, review cycle stage tracking, and a space for 1:1 notes. Your password is <strong>christina_grow</strong>. We will look at it together in an early 1:1. It is a starting point for conversation, not a performance evaluation.<br><br>One small ask: I like to celebrate the team on birthdays and other occasions, so if you are comfortable sharing your birthday, address, phone number, and a personal email, there is a place to add those in the tracker. Completely optional.</div>
+      </div>
+      <div class="tool-item">
+        <div>
+          <div class="tool-name">Team Survey</div>
+          <div style="margin-top:4px"><span class="check-tag tag-green">Quick · ~10 min</span></div>
+        </div>
+        <div class="tool-desc">When I first joined, I asked the team to fill out a survey to help me understand how everyone was feeling, what was working, and what they needed from a manager. I would love for you to fill it out when you have 10 minutes. Your perspective as someone returning from leave and meeting a new manager is genuinely useful context. No right or wrong answers.<br><br><a href="https://forms.gle/yVwDVEKDDHmVvADYA" target="_blank" style="color:var(--red);font-weight:500;text-decoration:none;">Take the survey &rarr;</a></div>
+      </div>
+      <div class="tool-item">
+        <div>
+          <div class="tool-name">Portfolio Dashboard</div>
+          <div style="margin-top:4px"><span class="check-tag tag-blue">Reference</span></div>
+        </div>
+        <div class="tool-desc">A comprehensive reference document covering the FY27 product strategy, surface roadmaps for RPD, RPA, and the Online Store, team structure, key decisions from the FY27 roadmap workshop, and a design strategy section specific to BACXD. Useful for getting up to speed on context quickly. I will share the link directly.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── YOUR TEAM ── -->
+  <div class="section">
+    <div class="section-label">Your Team</div>
+    <div class="section-title">Who is on the team now</div>
+    <div class="section-body">The team is the same people, with one change: Carolina Sanchez (contractor) has rolled off. Everyone else is here and looking forward to having you back.</div>
+
+    <div class="person-grid">
+      <div class="person-card">
+        <div class="person-name">Will Soemargo</div>
+        <div class="person-role">Senior PD · Vancouver · Activate · RPD + RPA</div>
+        <div class="person-note">Promoted out-of-cycle in January. Working on the Activate capability: onboarding, migration, and RPA foundation work. Strong collaborator; you two will likely overlap on RPD.</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Pooja Sheth</div>
+        <div class="person-role">Senior PD · Chicago · Engage · RPD + RPA</div>
+        <div class="person-note">Eight-plus years at RDC with the deepest platform knowledge on the team. Wrapping LEX for Teams / Profiles carryover from FY26, then moving fully into Engage. PAC-nominated for Lead level.</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Lauren Lang</div>
+        <div class="person-role">Senior PD · Austin · Grow · Online Store</div>
+        <div class="person-note">Hired with lead-level experience. Owns the Online Store and is doing exploratory work on Notifications vs. Tasks as a cross-surface design framework. Strong strategic instincts.</div>
+      </div>
+      <div class="person-card">
+        <div class="person-name">Jon Grimes</div>
+        <div class="person-role">Mid-Level PD · Austin · Engage · RPD</div>
+        <div class="person-note">Has been on MVIP migration work alongside you and is now picking up Engage work as Pooja wraps her FY26 carryover. He will hand off the admin/role work to you cleanly.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── ORG CONTEXT ── -->
+  <div class="section">
+    <div class="section-label">Org Direction</div>
+    <div class="section-title">Where the organization is heading</div>
+    <div class="section-body">A few things worth knowing about the broader direction so you have context for the decisions you will be making.</div>
+
+    <div class="cards-3" style="margin-top:0">
+      <div class="card accent-red">
+        <div class="card-eyebrow">Platform Strategy</div>
+        <div class="card-title">Unified platform, one login, one launchpad</div>
+        <ul class="bullets">
+          <li>ProDash is being sunset; RPD is the destination for all clients</li>
+          <li>~600 MVIP clients migrating in H1, largest re-onboarding the platform has had</li>
+          <li>Core ProDash (C+, SPL, LEX) clients coming to RPD in H2, discovery starting now</li>
+        </ul>
+      </div>
+      <div class="card accent-green">
+        <div class="card-eyebrow">AI Priority</div>
+        <div class="card-title">Real Pro Assist, most important AI project of FY27</div>
+        <ul class="bullets">
+          <li>Intelligence layer that surfaces performance insights and coaching recommendations to agents</li>
+          <li>Leadership described it as the most important project of 2027</li>
+          <li>Thrive event demo is a live goal, design involvement in shaping the prototype is important</li>
+        </ul>
+      </div>
+      <div class="card accent-amber">
+        <div class="card-eyebrow">Commercial Model</div>
+        <div class="card-title">Transitioning to Cost Per Lead (CPL)</div>
+        <ul class="bullets">
+          <li>Moving from fixed subscription slots to variable CPL pricing</li>
+          <li>Changes how products need to be explained in the dashboard and store</li>
+          <li>New pricing patterns will need design work in H2</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:16px">
+      <div class="callout-label">Gray Knowlton's Framing, Worth Knowing</div>
+      <div class="callout-body">Gray (SVP Products, GM, Ava's boss) joined earlier this year with a clear philosophy: the team needs to operate as a system enabling coordinated action, not a collection of independent workstreams. His three success criteria are simple: <strong>operate with coordinated action, consistently hit goals, and build products people want to use every day.</strong> He is also explicit about wanting to invest in leadership development. For you as a Lead PD, that is a favorable environment. There is organizational appetite for designers who think and operate at a strategic level.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── FIRST WEEKS ── -->
+  <div class="section">
+    <div class="section-label">First Weeks Back</div>
+    <div class="section-title">A suggested arc, not a prescription</div>
+    <div class="section-body">There is no expectation that you hit the ground running. Here is how I am thinking about the first few weeks, but we will adjust this based on what actually feels right for you.</div>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-num">Wk 1</div>
+        <div class="check-content">
+          <div class="check-title">Reorient, no deliverables expected</div>
+          <div class="check-body">Return check-in with Julie (I will be there). Read through this brief at your own pace. Join the BACXD team meeting on Tuesday. Look through the Career Growth Tracker. Ask whatever questions come up, nothing is a dumb question here.</div>
+          <span class="check-tag tag-green">Low pressure</span>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">Wk 1–2</div>
+        <div class="check-content">
+          <div class="check-title">Fill out the team survey</div>
+          <div class="check-body">When you have 10 minutes, fill out the team survey. Your perspective matters, especially as someone returning from leave and meeting a new manager. <a href="https://forms.gle/yVwDVEKDDHmVvADYA" target="_blank" style="color:var(--red);font-weight:500;">Take the survey &rarr;</a></div>
+          <span class="check-tag tag-teal">~10 minutes</span>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">Wk 2</div>
+        <div class="check-content">
+          <div class="check-title">First proper 1:1 with Mirella</div>
+          <div class="check-body">Our Mondays are yours. First one will be a get-to-know-you conversation as much as a scope conversation. Bring whatever is on your mind. I will bring the Career Growth Tracker and we will look at it together.</div>
+          <span class="check-tag tag-purple">Monday</span>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">Wk 2–3</div>
+        <div class="check-content">
+          <div class="check-title">Pick up the in-flight MVIP work</div>
+          <div class="check-body">ISA role and agent removal are the most immediate handoffs. Jon will walk you through the work he has been covering. The brief for Live Transfer Agent Assignment (Charlie Lehman) will be ready and waiting.</div>
+          <span class="check-tag tag-amber">Design WIP</span>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">Wk 3–4</div>
+        <div class="check-content">
+          <div class="check-title">Begin FY27 goals conversation</div>
+          <div class="check-body">We have 45 days from your return date: 30 days to draft and then 15 days for leadership review before they go into the system. No rush in week one. We will start this conversation once you feel settled.</div>
+          <span class="check-tag tag-blue">HR deadline: ~Day 45</span>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">Month 2</div>
+        <div class="check-content">
+          <div class="check-title">Legacy portal deprecation comms, design ownership</div>
+          <div class="check-body">The Opcity Broker Portal and MVIP Portal are being sunset in Q3. No design plan exists yet for how clients are informed. This is an important piece of work that will likely be yours to own and we will scope it together once you are oriented.</div>
+          <span class="check-tag tag-red">Q3 deadline</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CLOSING ── -->
+  <div class="closing">
+    <div class="closing-body">
+      I know there is a lot in this document. You do not need to absorb it all at once, and you definitely do not need to act on most of it in the first week. The goal was to give you the full picture so that nothing catches you by surprise, and so you can come to our first 1:1 with whatever is actually on your mind rather than spending that time on logistics.
+      <br><br>
+      <strong>You are coming back to a team that is glad you are here.</strong> The work is meaningful, the direction is clearer than it has been in a while, and you have a real opportunity to shape how design operates at a senior level on this team. I am looking forward to building that with you.
+    </div>
+    <div class="closing-sig">Mirella G. Smartt · mirella.smartt@realtor.com · Slack: @mirella<br>Personal: mirella.smartt@gmail.com · 702-292-5888</div>
+  </div>
+
+</div>
+</body>
+</html>
